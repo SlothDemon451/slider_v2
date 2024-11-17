@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamic Store Slider</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome -->
+</head>
+<body>
+  <div class="slider-container">
+    <!-- Background -->
+    <div class="background-gradient"></div>
+
+    <!-- Social Media Links -->
+    <div class="social-links">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a> <!-- Facebook Icon -->
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> <!-- Twitter Icon -->
+    </div>
+
+    <!-- Slider Content -->
+    <div class="slider">
+      <!-- Slide -->
+      <div class="slide active">
+        <div class="text-content">
+          <h1>Welcome to our <span>Islamic Store</span></h1>
+          <p>Discover a wide range of Islamic products, including the Quran, Miswak, Tasbih counters, and more. Our clean and minimal website offers an Arabic touch with mild colors.</p>
+          <button class="shop-btn">Shop Now</button>
+        </div>
+        <img src="book.png" alt="Product 1" class="product-image">
+      </div>
+
+      <div class="slide">
+        <div class="text-content">
+          <h1>Elegant <span>Islamic Products</span></h1>
+          <p>Explore our beautiful collection of handcrafted wooden Qurans and Tasbihs. Perfect gifts for special occasions.</p>
+          <button class="shop-btn">Shop Now</button>
+        </div>
+        <img src="cat.png" alt="Product 2" class="product-image">
+      </div>
+
+      <div class="slide">
+        <div class="text-content">
+          <h1>Minimal & <span>Modern</span></h1>
+          <p>Shop our exclusive line of contemporary Islamic products, blending tradition with modernity.</p>
+          <button class="shop-btn">Shop Now</button>
+        </div>
+        <img src="book.png" alt="Product 3" class="product-image">
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <div class="navigation-bar">
+        <div class="navigation-bar-fill" id="navigation-fill"></div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <span class="scroll-arrow">&#8595;</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

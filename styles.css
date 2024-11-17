@@ -1,0 +1,226 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Static Background */
+  .background-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2c665d, #325c41);
+    z-index: 1;
+  }
+  
+  /* Social Links */
+  .social-links {
+    position: absolute;
+    top: 20%;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+  }
+  
+  .social-icon {
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    margin: 10px 20px;
+    transition: color 0.3s;
+  }
+  
+  .social-icon:hover {
+    color: #ffc107;
+  }
+  
+  /* Slider */
+  .slider {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .slide {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .text-content {
+    max-width: 50%;
+    color: white;
+    padding: 0 30px;
+    z-index: 10;
+  }
+  
+  .text-content h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .text-content h1 span {
+    color: #ffc107;
+  }
+  
+  .text-content p {
+    margin: 20px 0;
+    line-height: 1.5;
+  }
+  
+  .shop-btn {
+    background-color: #ffc107;
+    border: none;
+    padding: 10px 20px;
+    color: black;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .shop-btn:hover {
+    background-color: #e0a700;
+  }
+  
+  /* Product Image */
+  .product-image {
+    max-width: 30%;
+    animation: slide-in 1s ease-in-out;
+  }
+  
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Navigation Dots */
+  .navigation-dots {
+    position: absolute;
+    right: 20px; /* Position on the right */
+    top: 50%; /* Centered vertically */
+    transform: translateY(-50%); /* Adjusted to center */
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    gap: 20px; /* Space between dots */
+    z-index: 10;
+  }
+  
+  .dot {
+    width: 10px; /* Width of the dot */
+    height: 10px; /* Height of the dot */
+    background-color: #fff; /* Default color */
+    border-radius: 50%; /* Make it circular */
+    transition: background-color 0.3s; /* Smooth transition for color change */
+  }
+  
+  .dot.active {
+    background-color: transparent; /* Make active dot transparent */
+  }
+  
+  .dot.active::after {
+    content: '';
+    display: block;
+    width: 10px; /* Increased width for the bar */
+    height: 30px; /* Set a specific height for the bar */
+    background: rgba(255, 193, 7, 0.7); /* Glass-like color with transparency */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5); /* Soft glow effect */
+    animation: fill 5s forwards; /* Fill animation */
+  }
+  
+  @keyframes fill {
+    from {
+        height: 0; /* Start from 0 height */
+    }
+    to {
+        height: 30px; /* Fill to the specified height */
+    }
+  }
+  
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    color: white;
+    font-size: 24px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .scroll-arrow {
+    animation: bounce 2s infinite;
+    position: relative; /* Position relative for the outline */
+    z-index: 1; /* Ensure the arrow is above the circle */
+    color: white; /* Default color */
+    transition: color 0.3s; /* Smooth transition for color change */
+  }
+  
+  /* Hover Effect */
+  .scroll-arrow:hover {
+    color: #ffc107; /* Change color on hover */
+  }
+  
+  /* Circle Outline */
+  .scroll-arrow::before {
+    content: '';
+    position: absolute;
+    width: 50px; /* Width of the circle */
+    height: 50px; /* Height of the circle */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Circle outline color */
+    border-radius: 50%; /* Make it circular */
+    top: -10px; /* Adjust position to center around the arrow */
+    left: -20px; /* Adjust position to center around the arrow */
+    transition: border-color 0.3s;
+  }
+  .scroll-arrow:hover::before {
+    border-color: #ffc107; /* Change outline color on hover */
+}
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
