@@ -56,8 +56,9 @@ body, html {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
+    padding: 0 20px;
   }
   
   .slide {
@@ -81,6 +82,9 @@ body, html {
     color: white;
     padding: 0 30px;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .text-content h1 {
@@ -97,6 +101,7 @@ body, html {
     line-height: 1.5;
   }
   
+  /* Button Styles */
   .shop-btn {
     background-color: #ffc107;
     border: none;
@@ -106,6 +111,9 @@ body, html {
     font-size: 1rem;
     border-radius: 5px;
     transition: background-color 0.3s;
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
   }
   
   .shop-btn:hover {
@@ -223,4 +231,118 @@ body, html {
       transform: translateY(-10px);
     }
   }
+
+   /* Navigation Buttons */
+   .nav-button {
+    position: fixed; /* Fixed positioning */
+    bottom: 20px; /* Position from the bottom */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    border: none;
+    color: black; /* Button text color */
+    font-size: 24px; /* Font size for the arrows */
+    padding: 10px 20px;
+    border-radius: 60px; /* Make buttons circular */
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons are above other elements */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
   
+  /* Positioning for buttons */
+  .prev-button {
+    right: 80px; /* Position the previous button */
+  }
+  
+  .next-button {
+    right: 20px; /* Position the next button */
+  }
+  
+  /* Hover effect for buttons */
+  .nav-button:hover {
+    background-color: rgba(255, 255, 255, 1); /* Change background on hover */
+  }
+  
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .text-content {
+        max-width: 100%;
+        padding: 0 10px;
+        order: 2;
+    }
+    .nav-button{
+      padding: 5px 10px;
+      font-size: 18px;
+    }
+    .prev-button{
+      right: 60px;
+    }
+
+    .product-image {
+        max-width: 100%;
+        margin: 20px 0;
+        order: 1;
+    }
+    .text-content h1, p{
+      text-align: center;
+    }
+
+
+    .slide {
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .text-content {
+        max-width: 100%;
+        padding: 0 5px;
+    }
+    .social-links{
+      display: none;
+    }
+    .scroll-arrow{
+      display: none;
+    }
+    .nav-button{
+      display: none;
+    }
+    .navigation-dots {
+      top: auto; /* Reset top positioning */
+      bottom: 20px; /* Position at the bottom */
+      right: 0; /* Reset right positioning */
+      left: 0; /* Add left positioning */
+      margin: 0 auto; /* Center the dots */
+      transform: none; /* Remove transform */
+      justify-content: center;
+      flex-direction: row;
+  }
+    .dot{
+      width: 40px;
+      border-radius: 15px;
+    }
+    .dot.active::after{
+      animation: fill 5s forwards;
+      height: 10px;
+    }
+    
+    @keyframes fill {
+      from{
+        width: 0;
+      }
+      to{
+        width: 100%;
+      }
+    }
+  
+    .product-image {
+        max-width: 100%;
+    }
+
+    .shop-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+  }
+  
+ 
